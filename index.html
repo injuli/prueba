@@ -1,44 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script>
-    $(document).ready(function () {
-      $('.menuContainer').load('./lista.html');
-    });
-  </script>
+        $(document).ready(function() {
+            $('.menuContainer').load('./lista.html');
+        });
+    </script>
 </head>
 
 <body>
-<div class="site-header sticky-top py-1 jumbotron text-left">
-	<div class="row">
-		<h1>LOGO</h1>
-	</div>
-  <div class="container">
-  	<div class="row">
-		<div class="text-center col-sm-4">
-	      <h4>¿Cúal es tu parche?</h4>
-	    </div>
-	    <div class="text-center col-sm-4">
-	      <h4>¿Cúal es el plan proyéctate?</h4>
-	    </div>
-	    <div class="text-center col-sm-4">
-	      <h4>Preguntas frecuentes</h4>
-	    </div> 
-  	</div>
-  </div>
-</div>
+    <div class="site-header sticky-top py-1 jumbotron text-left">
+        <div class="row">
+            <h1>LOGO</h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-sm-4">
+                    <h4>¿Cúal es tu parche?</h4>
+                </div>
+                <div class="text-center col-sm-4">
+                    <h4>¿Cúal es el plan proyéctate?</h4>
+                </div>
+                <div class="text-center col-sm-4">
+                    <h4>Preguntas frecuentes</h4>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<div class="container">
-	<div class="menuContainer"></div>
-</div>
+    <div class="container">
+        <button onclick="mostrarFormulario('contenedor')" type="button" id="btn1" class="btn btn-success float-right">Crear</button>
+        <br>
+        <table class="list table table-striped" id="employeeList">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th><i class="fas fa-at"></i>E-mail</th>
+                    <th>Sexo</th>
+                    <th>Área</th>
+                    <th><i class="fas fa-envelope"></i>Boletín</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <br>
+
+        <form style="display:none" id="contenedor" onsubmit="event.preventDefault();onFormSubmit();" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label>Nombre completo*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                <input type="text" name="nombre" id="nombre" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Correo electrónico*</label>
+                <input type="text" name="correo" id="correo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Sexo*</label>
+                <input type="text" name="sexo" id="sexo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Área*</label>
+                <input type="text" name="area" id="area" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Boletín*</label>
+                <input type="text" name="boletin" id="boletin" class="form-control">
+            </div>
+            <div></div>
+            <div class="form-action-buttons">
+                <input type="submit" value="Submit" class="form-control">
+            </div>
+        </form>
+
+        <script src="script.js"></script>
+    </div>
 
 </body>
 
