@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+      $('.menuContainer').load('./crearFormulario.html');
+  });
+
+});
+</script>
+
+</head>
+<body>
+
+<div class="container">
+  <div class="menuContainer"></div>
+  <button type="button" id="btn1" class="btn btn-success float-right">Crear</button>
+  <br>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th><i class="fas fa-at"></i>E-mail</th>
+        <th>Sexo</th>
+        <th>Área</th>
+        <th><i class="fas fa-envelope"></i>Boletín</th>
+        <th>Modificar</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+
+    <tbody id="tablita">
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

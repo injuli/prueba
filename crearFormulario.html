@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    function guardar(){
+      var _nombre = document.getElementById("nombre").value;
+      var _email = document.getElementById("email").value;  
+      var _sexo = document.getElementById("sexo").value;
+      var _area = document.getElementById("area").value;
+      var _boletin = document.getElementById("boletin").value;      
+
+      var fila="<tr><td>"+_nombre+"</td><td>"+_email+"</td><td>"+_sexo+"</td><td>"+_area+"</td></tr>"+_boletin+"</td></tr>";
+      var btn = document.createElement("TR");
+      btn.innerHTML=fila;
+      document.getElementById("tablita").appendChild(btn); 
+      alert("tablita")
+    }
+  </script>
+</head>
+<body>
+
+<div class="container">
+  <form class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="uname">Nombre completo*:</label>
+      <input type="text" class="form-control" id="uname" placeholder="Nombre completo del empleado" name="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Por favor, ingrese el nombre.</div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Correo electrónico*:</label>
+      <input type="email" class="form-control" id="pwd" placeholder="Correo electrónico" name="email" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Por favor, ingrese el correo electrónico.</div>
+    </div>
+    <div class="form-group form-check">
+      <label class="form-check-label">Sexo*</label>
+      <br>
+        <input type="radio" name="gender" value="male" checked> Masculino<br>
+        <input type="radio" name="gender" value="female"> Femenino<br>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Seleccione el sexo.</div>
+    </div>
+    <div class="form-group">
+      <label for="sel1">Área:</label>
+      <select class="form-control" id="sel1">
+        <option>Administración</option>
+        <option>Ventas</option>
+        <option>Calidad</option>
+        <option>Producción</option>
+      </select>
+    </div>
+    <button  id="guarar" class="btn btn-primary" onclick="guardar()">Guardar</button>
+  </form> 
+</div>
+
+
+</body>
+</html>
