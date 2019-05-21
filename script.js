@@ -1,6 +1,6 @@
 var selectedRow = null
 
-function mostrarFormulario(id) {
+function showFormulario(id) {
     var content = document.getElementById(id);
     content.style.display = "block";
 }
@@ -46,11 +46,11 @@ function insertNewRecord(data) {
 
     cell6 = newRow.insertCell(5);
     cell6.innerHTML = data.modificar;
-    cell6.innerHTML = `<a onClick="onEdit(this)">Modificar</a>`;
+    cell6.innerHTML = `<a onClick="onEdit(this)"><i class="fas fa-edit"></i></a>`;
 
     cell7 = newRow.insertCell(6);
     cell7.innerHTML = data.eliminar;
-    cell7.innerHTML = `<a onClick="onDelete(this)">Eliminar</a>`;
+    cell7.innerHTML = `<a onClick="onDelete(this)"><i class="fas fa-trash"></i></a>`;
 
 
 }
@@ -82,7 +82,7 @@ function updateRecord(formData) {
 }
 
 function onDelete(td) {
-    if (confirm('Are you sure to delete this record ?')) {
+    if (confirm('¿Está seguro de eliminar usuario?')) {
         row = td.parentElement.parentElement;
         document.getElementById("employeeList").deleteRow(row.rowIndex);
         resetForm();

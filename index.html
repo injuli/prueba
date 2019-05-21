@@ -5,48 +5,45 @@
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.menuContainer').load('./lista.html');
-        });
-    </script>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- <script src="./js/bootstrap.js"></script> -->
 </head>
 
 <body>
-    <div class="site-header sticky-top py-1 jumbotron text-left">
-        <div class="row">
-            <h1>LOGO</h1>
+    <nav class="site-header sticky-top py-1 navbar navbar-expand-lg navbar-light bg-danger">
+        <a class="navbar-brand" href="#">LOGO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-light " href="#">¿Cúal es tu parche? <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">¿Cúal es el plan proyéctate? <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Preguntas frecuentes <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="text-center col-sm-4">
-                    <h4>¿Cúal es tu parche?</h4>
-                </div>
-                <div class="text-center col-sm-4">
-                    <h4>¿Cúal es el plan proyéctate?</h4>
-                </div>
-                <div class="text-center col-sm-4">
-                    <h4>Preguntas frecuentes</h4>
-                </div>
-            </div>
-        </div>
-    </div>
+    </nav>
 
     <div class="container">
-        <button onclick="mostrarFormulario('contenedor')" type="button" id="btn1" class="btn btn-success float-right">Crear</button>
+        <br>
+        <h2>Crear empleado</h2>
+        <button onclick="showFormulario('contenedor')" type="button" id="btn1" class="btn btn-success float-right"><i class="fas fa-user-plus"></i>Crear</button>
         <br>
         <table class="list table table-striped" id="employeeList">
             <thead>
                 <tr>
-                    <th>Nombre</th>
+                    <th><i class="fas fa-user"></i>Nombre</th>
                     <th><i class="fas fa-at"></i>E-mail</th>
-                    <th>Sexo</th>
-                    <th>Área</th>
+                    <th><i class="fas fa-venus-mars"></i>Sexo</th>
+                    <th><i class="fas fa-shopping-bag"></i>Área</th>
                     <th><i class="fas fa-envelope"></i>Boletín</th>
                     <th>Modificar</th>
                     <th>Eliminar</th>
@@ -57,8 +54,8 @@
             </tbody>
         </table>
         <br>
-
         <form style="display:none" id="contenedor" onsubmit="event.preventDefault();onFormSubmit();" class="needs-validation" novalidate>
+            <h2>Lista de empleados</h2>
             <div class="form-group">
                 <label>Nombre completo*</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
                 <input type="text" name="nombre" id="nombre" class="form-control">
@@ -73,7 +70,12 @@
             </div>
             <div class="form-group">
                 <label>Área*</label>
-                <input type="text" name="area" id="area" class="form-control">
+                <select name="area" class="form-control" id="area">
+                        <option>Administración</option>
+                        <option>Ventas</option>
+                        <option>Calidad</option>
+                        <option>Producción</option>
+                      </select>
             </div>
             <div class="form-group">
                 <label>Boletín*</label>
@@ -81,7 +83,7 @@
             </div>
             <div></div>
             <div class="form-action-buttons">
-                <input type="submit" value="Submit" class="form-control">
+                <input type="submit" value="Guardar" class="form-control">
             </div>
         </form>
 
